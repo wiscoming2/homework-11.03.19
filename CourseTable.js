@@ -9,7 +9,7 @@
             <p>title: <input type="text" id="IDtitle"/></p>
             <p>startdate: <input type="text" id="IDstart"/></p>
             <p>enddate: <input type="text" id="IDend"/></p>
-            <select id="difficulty level">
+            <select id="difficultylevel">
                 <option value="easy">easy</option>
                 <option value="normal">normal</option>
                 <option value="hard">hard</option>
@@ -18,11 +18,8 @@
                 <input type="checkbox" name="isItDual" id="IDdual" value="dual"> dual semesters<br>
             </p>
             <button onclick="add()">add</button>
-        
-        
-        <table>
-            
-            <tr>
+        <table border="3">
+            <tr style="background: burlywood">
                 <th>id</th>
                 <th>title</th>
                 <th>start</th>
@@ -57,7 +54,7 @@
                 var y = $('#IDtitle').val()
                 var z = $('#IDstart').val()
                 var k = $('#IDend').val()
-                var f = $("#difficulty level option:selected").text()
+                var f = $("#difficultylevel option:selected").text()
                 var a = $('#IDdual').is(':checked')
                 var course = new Course(x , y , z , k , f , a)
                 addRow(course)
