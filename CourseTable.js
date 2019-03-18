@@ -2,30 +2,36 @@
     <head>
             <title>html rocks!!</title>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"> </script> 
+            <style>
+                table, th, td {
+                  border: 1px solid black;
+                  border-collapse: collapse;
+                }
+                th, td {
+                  padding: 5px;
+                }
+                th {
+                  text-align: right;
+                }
+            </style>
     </head>
     <body>
-        
-            <p>id: <input type="number" id="IDinput"/></p>
-            <p>title: <input type="text" id="IDtitle"/></p>
-            <p>startdate: <input type="text" id="IDstart"/></p>
-            <p>enddate: <input type="text" id="IDend"/></p>
-            <select id="difficultylevel">
-                <option value="easy">easy</option>
-                <option value="normal">normal</option>
-                <option value="hard">hard</option>
-            </select>
-            <p>
-                <input type="checkbox" name="isItDual" id="IDdual" value="dual"> dual semesters<br>
-            </p>
-            <button onclick="add()">add</button>
         <table border="3">
             <tr style="background: burlywood">
-                <th>id</th>
-                <th>title</th>
-                <th>start</th>
-                <th>end</th>
-                <th>level</th>
-                <th>dual?</th>
+                <th>id: <input type="number" id="IDinput"/></th>
+                <th>title: <input type="text" id="IDtitle"/></th>
+                <th>start: <input type="text" id="IDstart"/></th>
+                <th>end: <input type="text" id="IDend"/></th>
+                <th>
+                    <select id="difficultylevel">
+                        <option value="easy">easy</option>
+                        <option value="normal">normal</option>
+                        <option value="hard">hard</option>
+                    </select>
+                </th>
+                <th>
+                    <input type="checkbox" name="isItDual" id="IDdual" value="dual">dual?<br>
+                </th>
             </tr>
             <tbody id="body1">
                 <tr>
@@ -38,6 +44,7 @@
                 </tr>
             </tbody>
         </table>
+        <button onclick="add()">add</button>
         <script>
             function Course(_id , _title , _start , _end , _level , _dual)
             {
